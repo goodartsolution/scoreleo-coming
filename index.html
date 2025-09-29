@@ -6,23 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoreleo - Coming Soon</title>
 
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
         }
 
         .container {
             width: 100%;
             height: 100vh;
-            background-image: url('https://i.ibb.co/G4RJ41qf/SCORELEO-HTML-Background-1920x1080-2.png');
+            background-image: url('https://i.ibb.co/8nGjY1T9/SCORELEO-HTML-Background-1920x1080-3.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+        }
+
+        .main-title {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 4rem;
+            color: #ffffff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .main-title .highlight {
+            color: #ffb70f;
+            text-shadow: 2px 2px 4px rgba(255, 183, 15, 0.3);
+        }
+
+        .main-title .subtitle {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-top: 10px;
+            color: #cccccc;
+            letter-spacing: 2px;
         }
 
         .newsletter-section {
@@ -108,9 +145,21 @@
         }
 
         @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+                top: 30%;
+                letter-spacing: 1px;
+            }
+
+            .main-title .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+
             .newsletter-section {
                 padding: 30px 20px;
                 margin: 20px;
+                bottom: 5rem;
             }
 
             .newsletter-section h2 {
@@ -125,11 +174,31 @@
                 margin-bottom: 10px;
             }
         }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+                letter-spacing: 0.5px;
+            }
+
+            .main-title .subtitle {
+                font-size: 1rem;
+            }
+
+            .newsletter-section {
+                bottom: 3rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <h1 class="main-title">
+            <span>Score</span><span class="highlight">Leo</span> <span>is in the works</span>
+            <span class="subtitle">We're building a fresh way to follow live sports scores and results designed for
+                speed, simplicity, and fans like</span>
+        </h1>
         <div class="newsletter-section">
 
             <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/xzzjeord" method="POST">
