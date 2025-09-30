@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scoreleo - Coming Soon</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --brand:#ffb80f; --brand-2:#ff9f00;
+      --text:#fff; --muted:#cccccc;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:'Rajdhani',sans-serif; color:var(--text); background:#000;}
+
+    .container{
+      min-height:100dvh;
+      display:flex; align-items:center; justify-content:center;
+      padding:clamp(16px,4vw,48px);
+      background-image:url('https://i.ibb.co/8nGjY1T9/SCORELEO-HTML-Background-1920x1080-3.png');
+      background-size:cover; background-position:center;
+      position:relative;
+      /* overlay removed per your request */
+    }
+
+    .content{
+      margin-top: clamp(120px, 25vh, 300px);
+	  position:relative;
+      width:min(960px,100%);
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+      gap:clamp(16px,3.5vw,28px);
+    }
+
+    .main-title{
+      margin:0;
+      font-family:'Orbitron',monospace;
+      font-weight:800; line-height:1.15; letter-spacing:.06em;
+      text-shadow:0 3px 12px rgba(0,0,0,.35);
+      font-size:clamp(28px,5.5vw,48px);
+      color:#ffffff;
+    }
+    .highlight{ color:var(--brand); text-shadow:0 2px 8px rgba(255,183,15,.3); }
+    .subtitle{
+      display:block; margin-top:.4em;
+      font-weight:400; letter-spacing:.04em; color:var(--muted);
+      font-size:clamp(14px,2.5vw,20px);
+    }
+
+    .newsletter-section{
+      width:min(680px,100%);
+      display:flex; flex-direction:column; align-items:center; gap:14px;
+      padding:clamp(12px,2.5vw,20px);
+      border-radius:16px;
+      background:rgba(0,0,0,.35); /* keep this panel for text legibility */
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 32px rgba(0,0,0,.25);
+    }
+
+    .newsletter-form{
+      width:100%;
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center;
+    }
+
+    /* Accessible (visually hidden) label */
+    .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;clip-path:inset(50%);}
+
+    .email-input{
+      flex:1 1 320px;      /* reasonable default */
+      min-width:220px;
+      max-width:420px;     /* prevents overgrowth on larger but narrow screens */
+      padding:12px 14px;   /* slightly smaller height */
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:10px;
+      background:rgba(255,255,255,.12);
+      color:#fff; font-size:16px; outline:none;
+      transition:.2s border-color,.2s background,.2s transform;
+    }
+    .email-input::placeholder{color:#bdbdbd}
+    .email-input:focus{border-color:var(--brand); background:rgba(255,255,255,.18); transform:translateY(-1px);}
+
+    .subscribe-btn{
+      padding:12px 20px;
+      background:linear-gradient(45deg,var(--brand),var(--brand-2));
+      color:#fff; border:0; border-radius:10px;
+      font-size:16px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+      cursor:pointer; white-space:nowrap;
+      transition:.2s transform,.2s box-shadow,.2s filter;
+    }
+    .subscribe-btn:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(255,184,15,.35); filter:saturate(1.05); }
+    .subscribe-btn:disabled{opacity:.7; cursor:wait;}
+
+    .fineprint{ margin:4px 0 0; color:#e6e6e6; font-size:clamp(12px,1.8vw,14px); }
+
+    /* Small screens: keep the input modest, centered, not full-bleed */
+    @media (max-width:640px){
+      .newsletter-form{
+        flex-direction:column; align-items:center; /* center instead of stretch */
+      }
+      .email-input{
+        flex:0 1 auto;
+        width:min(320px, 92%); /* cap width so it doesn't look huge */
+        max-width:320px;
+        padding:11px 14px;     /* slightly smaller height on phones */
+      }
+      .subscribe-btn{ width:min(320px, 92%); }
+    }
+.site-footer {
+  margin-top: 24px;              /* spacing from newsletter */
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #cccccc;
+  /*background: rgba(0,0,0,0.7);   /* dark strip so text is readable */
+  padding: 14px 0;
+  border-radius: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="content" aria-labelledby="title">
+      <h1 id="title" class="main-title">
+        <span>THE FUTURE OF </span><span class="highlight">LIVE SCORES</span> <span>IS COMING</span>
+        <span class="subtitle">We're building a fresh way to follow live sports scores and results designed for speed, simplicity and fans like you.</span>
+      </h1>
+
+      <div class="newsletter-section">
+        <p class="subtitle">Sign up now and be the first to know when ScoreLeo officially launches and gain early access.</p>
+
+        <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/xzzjeord" method="POST">
+          <label for="emailInput" class="vh">Email address</label>
+          <input type="email" class="email-input" placeholder="Enter your email address" required name="email" id="emailInput" inputmode="email" autocomplete="email" />
+          <input type="hidden" name="_subject" value="New Scoreleo Newsletter Subscription">
+          <input type="hidden" name="_next" value="thank-you.html">
+          <button type="submit" class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+        </form>
+
+        <p class="fineprint">Have questions? Reach out anytime at <a href="mailto:info@scoreleo.com" style="color:var(--brand);text-decoration:none;">info@scoreleo.com</a></p>
+        <p class="fineprint" id="statusMsg" aria-live="polite"></p>
+      </div>
+        <footer class="site-footer">
+  &copy; <span id="year"></span> scoreleo.com. All rights reserved.
+</footer>
+    </section>
+  </div>
+
+
+  <script>
+    const form = document.getElementById('newsletterForm');
+    const email = document.getElementById('emailInput');
+    const btn = document.getElementById('subscribeBtn');
+    const statusMsg = document.getElementById('statusMsg');
+
+    form.addEventListener('submit', function(e){
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      if(!valid){
+        e.preventDefault();
+        statusMsg.textContent = 'Please enter a valid email address.';
+        email.focus();
+        return;
+      }
+      btn.textContent = 'Subscribing…';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
