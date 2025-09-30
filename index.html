@@ -74,13 +74,17 @@
 
     .main-title {
       margin: 0;
-      font-family: 'Sakana', monospace;
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: .06em;
       text-shadow: 0 3px 12px rgba(0, 0, 0, .35);
       font-size: clamp(28px, 5.5vw, 48px);
       color: #ffffff;
+    }
+
+    .header-text {
+      font-family: 'Sakana', monospace;
+
     }
 
     .highlight {
@@ -91,11 +95,21 @@
     .subtitle {
       display: block;
       margin-top: .4em;
-      font-weight: 400;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--muted);
+      font-size: clamp(28px, 2.5vw, 20px);
+    }
+
+    .newsletter-title {
+      display: block;
+      margin-bottom: .4em;
+      font-weight: 500;
       letter-spacing: .04em;
       color: var(--muted);
       font-size: clamp(14px, 2.5vw, 20px);
     }
+
 
     .newsletter-section {
       width: min(680px, 100%);
@@ -211,6 +225,10 @@
       .subscribe-btn {
         width: min(320px, 92%);
       }
+
+      .subtitle {
+        display: none;
+      }
     }
 
     .site-footer {
@@ -232,13 +250,15 @@
   <div class="container">
     <section class="content" aria-labelledby="title">
       <h1 id="title" class="main-title">
-        <span>THE FUTURE OF </span><span class="highlight">LIVE SCORES</span> <span>IS COMING</span>
+        <span class="header-text"> <span>THE FUTURE OF </span><span class="highlight">LIVE SCORES</span> <span>IS
+            COMING</span></span>
         <span class="subtitle">We're building a fresh way to follow live scores and results designed for speed,
           simplicity and fans like you.</span>
       </h1>
 
       <div class="newsletter-section">
-        <p class="subtitle">Sign up now and be the first to know when ScoreLeo officially launches and gain early
+        <p class="newsletter-title">Sign up now and be the first to know when ScoreLeo officially launches and gain
+          early
           access.</p>
 
         <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/xzzjeord" method="POST">
